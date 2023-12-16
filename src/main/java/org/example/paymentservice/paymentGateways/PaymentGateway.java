@@ -3,5 +3,5 @@ package org.example.paymentservice.paymentGateways;
 import com.stripe.exception.StripeException;
 
 public interface PaymentGateway {
-    String generatePaymentLink(Long amount, String orderId) throws StripeException;
+    String generatePaymentLink(String orderId, String email, String phoneNumber, Long amount) throws StripeException;
 }

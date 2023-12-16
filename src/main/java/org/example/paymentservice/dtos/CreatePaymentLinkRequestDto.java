@@ -6,5 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreatePaymentLinkRequestDto {
-    private long orderId;
+    private String orderId;
+    private String email;
+    private String phoneNumber;
+    private long amount;
 }

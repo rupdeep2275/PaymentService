@@ -16,6 +16,6 @@ public class PaymentController {
 
     @RequestMapping("/")
     public String createPaymentLink(@RequestBody CreatePaymentLinkRequestDto request) throws StripeException {
-        return paymentService.createPaymentLink(request.getOrderId());
+        return paymentService.createPaymentLink(request.getOrderId(), request.getEmail(), request.getPhoneNumber(), request.getAmount());
     }
 }

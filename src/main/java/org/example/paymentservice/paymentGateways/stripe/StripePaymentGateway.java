@@ -1,4 +1,4 @@
-package org.example.paymentservice.paymentGateways.razorPay;
+package org.example.paymentservice.paymentGateways.stripe;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -17,7 +17,7 @@ public class StripePaymentGateway implements PaymentGateway {
     @Value("${stripe.secret_key}")
     private String stripeSecretKey;
     @Override
-    public String generatePaymentLink(Long amount, String orderId) throws StripeException {
+    public String generatePaymentLink(String orderId, String email, String phoneNumber, Long amount) throws StripeException {
         // Set your secret key. Remember to switch to your live secret key in production.
         // See your keys here: https://dashboard.stripe.com/apikeys
         Stripe.apiKey = stripeSecretKey;

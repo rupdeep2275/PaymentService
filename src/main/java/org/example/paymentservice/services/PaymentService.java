@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class PaymentService {
 
-    private final PaymentGateway StripePaymentGateway;
+    private final PaymentGateway paymentGateway;
 
-    public String createPaymentLink(Long orderId) throws StripeException {
-        return StripePaymentGateway.generatePaymentLink(10000L, orderId.toString());
+    public String createPaymentLink(String orderId, String email, String phoneNumber, Long amount) throws StripeException {
+        return paymentGateway.generatePaymentLink(orderId, email, phoneNumber, amount);
     }
 }
